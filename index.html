@@ -3,9 +3,26 @@
         <title>
             Chris Yates
         </title>
+        <script src="jquery-3.5.1.min.js"></script>
+        <script>
+            function openResume(){
+                window.open("https://docs.google.com/document/d/18sv-0kBxhcXYbyAwoejBvgHCEcJR6-2JVknvuPrVdPA/edit?usp=sharing",'_blank');
+            }
+        </script>
+        <link rel="stylesheet" href="index.css"/>
     </head>
     <body>
-        <h1>Chris Yates</h1>
+        <div id="titlebar">
+            <h1 id="title">Chris Yates</h1>
+            <object-button icon="./assets/account_circle-white-24dp.svg" text="My Resume" height="40" width="150" curve="15" id="resumeLinkButton" onclick="openResume()"></object-button>
+        </div>
         <p>Hi there.</p>
+
+
+
+        <br>
+        <br>
+
+        <script src="ObjectButton.js"></script>
     </body>
 </html>

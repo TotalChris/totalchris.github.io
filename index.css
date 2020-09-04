@@ -1,0 +1,12 @@
+#titlebar{
+    display: flex;
+    justify-content: space-between;
+    background-color: #232323;
+    border-radius: 20px;
+}
+
+#title{
+    margin-left: 20px;
+    font-family: Roboto;
+    color: white;
+}

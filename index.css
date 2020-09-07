@@ -2,14 +2,15 @@
     display: flex;
     justify-content: space-between;
     background-color: #232323;
-    border-radius: 20px;
+    border-radius: 2vh;
     min-height: 80px;
     align-items: center;
-    height: 10%;
+    height: 10vh;
 }
 
 #title{
-    margin-left: 20px;
+    margin-left: 2vh;
     font-family: Roboto;
     color: white;
+    font-size: 4vh;
 }

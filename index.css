@@ -1,7 +1,9 @@
 @font-face{
   font-family: 'YTSans';
-  src: url(./assets/fonts/sans-medium.ttf)
+  src: url(./assets/fonts/sans-medium.ttf);
+  src: url(./assets/fonts/sans-light.ttf);
 }
+
 
 #titlebar{
     display: flex;
@@ -17,4 +19,9 @@
     margin-left: 20px;
     font-family: YTSans;
     color: white;
+}
+
+body{
+    font-family: YTSans;
+    font-weight: lighter;
 }

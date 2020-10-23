@@ -1,3 +1,8 @@
+@font-face{
+  font-family: 'YTSans';
+  src: url(./assets/fonts/sans-medium.ttf)
+}
+
 #titlebar{
     display: flex;
     justify-content: space-between;
@@ -10,6 +15,6 @@
 
 #title{
     margin-left: 20px;
-    font-family: Roboto;
+    font-family: YTSans;
     color: white;
 }

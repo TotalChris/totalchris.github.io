@@ -2,12 +2,18 @@ import { LitElement, html, css } from 'https://unpkg.com/lit@latest?module';
 export class MSwitch extends LitElement{
     constructor() {
         super();
+        this.active = false;
+        this.addEventListener('click', this.flipSwitch)
     }
     static get properties() {
         return {
-            
+            active: {type: Boolean}
         };
     }
+    flipSwitch(){
+        this.active = !(this.active);
+    }
+
     static get styles(){
         return css`
           :host{
@@ -58,13 +64,19 @@ export class MSwitch extends LitElement{
     }
     render() {
         return html`
-            <div id="frame" tabindex="0" onclick="if(!(this.classList.contains('disabled'))){this.classList.toggle('active')}">
+            <div id="frame" tabindex="0" class="${(this.active) ? "active" : "" }">
                 <div id="slider"></div>
             </div>
         `
     }
 }
 customElements.define('m-switch', MSwitch);
+
+
+
+
+
+
 var select = new Audio('Select.wav');
 var deselect = new Audio('Back.wav');
 var move = new Audio('Move.wav');

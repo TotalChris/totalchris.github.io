@@ -3,11 +3,12 @@ export class MSwitch extends LitElement{
     constructor() {
         super();
         this.active = false;
-        this.addEventListener('click', this.flipSwitch)
+        this.addEventListener('click', this.flipSwitch);
     }
     static get properties() {
         return {
-            active: {type: Boolean}
+            active: {type: Boolean},
+            color: {type: String}
         };
     }
     flipSwitch(){
@@ -21,6 +22,7 @@ export class MSwitch extends LitElement{
             --msize: var(--size, 50px);
             --mdisabledcolor: var(--disabled-color, #888888);
             --mactivecolor: var(--glow-color, white);
+            --test: 0;
           }
           :host[disabled]{
             --mcolor: var(--disabled-color, #888888) !important;
@@ -112,6 +114,9 @@ document.querySelectorAll("m-switch").forEach((msw) => {
             isCursorLocked = true;
             move.play()
             rect = target.getBoundingClientRect();
+            cursor.style.setProperty("--ccolor", window.getComputedStyle(target).getPropertyValue('--mactivecolor'))
+            cursor.style.setProperty("--cglowcolor", window.getComputedStyle(target).getPropertyValue('--mcolor'))
+
 
             cursor.classList.add("is-locked");
             cursor.style.setProperty("--top", rect.top + rect.height / 2 + "px");
@@ -132,6 +137,7 @@ document.querySelectorAll("m-switch").forEach((msw) => {
             const halfWidth = rect.width / 2;
             const leftOffset = (event.x - rect.left - halfWidth) / halfWidth;
 
+            
             cursor.style.setProperty("--translateX", `${leftOffset * 3}px`);
             cursor.style.setProperty("--translateY", `${topOffset * 3}px`);
 
@@ -145,6 +151,9 @@ document.querySelectorAll("m-switch").forEach((msw) => {
         "mouseleave",
         ({ target }) => {
             isCursorLocked = false;
+
+            cursor.style.setProperty("--ccolor", "")
+            cursor.style.setProperty("--cglowcolor", "")
 
             cursor.style.setProperty("--width", DEFAULT_CURSOR_SIZE);
             cursor.style.setProperty("--height", DEFAULT_CURSOR_SIZE);

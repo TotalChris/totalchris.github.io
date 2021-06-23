@@ -3,18 +3,18 @@ export class MSwitch extends LitElement{
     constructor() {
         super();
         this.active = false;
-        this.addEventListener('click', this.flipSwitch);
+        this.addEventListener('click', () => {this.active = !(this.active)});
     }
     static get properties() {
         return {
             active: {type: Boolean},
-            color: {type: String}
+            mycolor: {type: String}
         };
     }
-    flipSwitch(){
-        this.active = !(this.active);
+    connectedCallback(){
+        super.connectedCallback();
+        console.log(this)
     }
-
     static get styles(){
         return css`
           :host{
@@ -23,6 +23,8 @@ export class MSwitch extends LitElement{
             --mdisabledcolor: var(--disabled-color, #888888);
             --mactivecolor: var(--glow-color, white);
             --test: 0;
+            height: fit-content;
+            width: fit-content;
           }
           :host[disabled]{
             --mcolor: var(--disabled-color, #888888) !important;
@@ -117,7 +119,6 @@ document.querySelectorAll("m-switch").forEach((msw) => {
             cursor.style.setProperty("--ccolor", window.getComputedStyle(target).getPropertyValue('--mactivecolor'))
             cursor.style.setProperty("--cglowcolor", window.getComputedStyle(target).getPropertyValue('--mcolor'))
 
-
             cursor.classList.add("is-locked");
             cursor.style.setProperty("--top", rect.top + rect.height / 2 + "px");
             cursor.style.setProperty("--left", rect.left + rect.width / 2 + "px");
@@ -148,6 +149,74 @@ document.querySelectorAll("m-switch").forEach((msw) => {
     );
 
     msw.addEventListener(
+        "mouseleave",
+        ({ target }) => {
+            isCursorLocked = false;
+
+            cursor.style.setProperty("--ccolor", "")
+            cursor.style.setProperty("--cglowcolor", "")
+
+            cursor.style.setProperty("--width", DEFAULT_CURSOR_SIZE);
+            cursor.style.setProperty("--height", DEFAULT_CURSOR_SIZE);
+            cursor.style.setProperty("--translateX", 0);
+            cursor.style.setProperty("--translateY", 0);
+
+            target.style.setProperty("--translateX", 0);
+            target.style.setProperty("--translateY", 0);
+            target.style.setProperty("--scale", 1);
+
+            setTimeout(() => {
+                if (!isCursorLocked) {
+                    cursor.classList.remove("is-locked");
+                }
+            }, 100);
+        },
+        { passive: true }
+    );
+});
+
+document.querySelectorAll("launch-button").forEach((lb) => {
+    let rect = null;
+
+    lb.addEventListener(
+        "mouseenter",
+        ({ target }) => {
+            isCursorLocked = true;
+            move.play()
+            rect = target.getBoundingClientRect();
+            cursor.style.setProperty("--ccolor", window.getComputedStyle(target).getPropertyValue('--mactivecolor'))
+            cursor.style.setProperty("--cglowcolor", window.getComputedStyle(target).getPropertyValue('--mcolor'))
+
+            cursor.classList.add("is-locked");
+            cursor.style.setProperty("--top", rect.top + rect.height / 2 + "px");
+            cursor.style.setProperty("--left", rect.left + rect.width / 2 + "px");
+            cursor.style.setProperty("--width", rect.width + "px");
+            cursor.style.setProperty("--height", rect.height + "px");
+
+            target.style.setProperty("--scale", 1.05);
+        },
+        { passive: true }
+    );
+
+    lb.addEventListener(
+        "mousemove",
+        ({ target }) => {
+            const halfHeight = rect.height / 2;
+            const topOffset = (event.y - rect.top - halfHeight) / halfHeight;
+            const halfWidth = rect.width / 2;
+            const leftOffset = (event.x - rect.left - halfWidth) / halfWidth;
+
+            
+            cursor.style.setProperty("--translateX", `${leftOffset * 3}px`);
+            cursor.style.setProperty("--translateY", `${topOffset * 3}px`);
+
+            target.style.setProperty("--translateX", `${leftOffset * 6}px`);
+            target.style.setProperty("--translateY", `${topOffset * 4}px`);
+        },
+        { passive: true }
+    );
+
+    lb.addEventListener(
         "mouseleave",
         ({ target }) => {
             isCursorLocked = false;

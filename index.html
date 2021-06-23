@@ -5,7 +5,11 @@
     <title>Title</title>
     <style>
         html{
-            
+
+        }
+        #testbutton{
+            --mcolor: #f0d0dd;
+            --mactivecolor: #ff1018;
         }
         body{
             background-color: #232323;
@@ -55,13 +59,23 @@
     </style>
 </head>
 <body>
+    <script src="jquery-3.5.1.min.js"></script>
     <m-switch id="redswitch" disabled></m-switch>
     <m-switch id="greenswitch"></m-switch>
     <m-switch id="blueswitch"></m-switch>
     <m-switch></m-switch>
+    <br>
+    <launch-button id="testbutton" href="D:\Games\Windows\Control\Control.exe" title="Control" developer="Remedy Entertainment" poster="media/control-bg.jpg" logo="media/control.png" y-offset="15px"></launch-button>
+    <launch-button href="" title="Quantum Break" developer="Remedy Entertainment" poster="media/quantumbreak-bg.jpg" logo="media/quantumbreak.png" hover-logo="media/quantumbreak-inv.png" y-offset="250px"></launch-button>
+    <launch-button href="" title="Resident Evil 4" developer="Capcom" poster="media/res4-bg.jpg" logo="media/residentevil4.png" y-offset="200px"></launch-button>
+    <launch-button href="" title="Super Mario 64" developer="Nintendo" poster="media/sm64-bg.jpg" logo="media/sm64.png" y-offset="210px"></launch-button>
+    <launch-button href="D:\Games\Windows\SteamLibrary\steamapps\common\RESIDENT EVIL 2  BIOHAZARD RE2\re2.exe" title="Resident Evil 2 (2018)" developer="Capcom" poster="media/res2-bg.jpg" logo="media/residentevil2.png" y-offset="160px"></launch-button>
+    <launch-button href="" title="Hypnospace Outlaw" developer="Tendershoot" poster="media/hypno-bg.jpg" logo="media/hypno.png" y-offset="250px"></launch-button>
     <div id="cursor" class="cursor">
         <div class="cursor__content"></div>
     </div>
     <script type="module" src="app.js"></script>
+    <script type="module" src="LaunchButton.js"></script>
+    
 </body>
 </html>

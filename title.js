@@ -52,7 +52,7 @@ class Shelf { //definition of a shelf, an array collection of notes.
 function init(){ //initialize element references and global objects/listeners
     //create a new shelf and shelflist (THIS WOULD IMPORT DATA IN MVP)
     this.loneshelf = new Shelf();
-    this.loneshelf.setName("Reminders")
+    this.loneshelf.setName("Default Shelf")
     this.shelflist = [];
     this.shelflist[0] = this.loneshelf;
 

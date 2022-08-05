@@ -54,7 +54,7 @@ function init(){ //initialize element references and global objects/listeners
     this.stored = JSON.parse(window.localStorage.getItem('TitleStoredShelves'));
     if(this.stored == null || this.stored == []){
         this.loneshelf = new Shelf();
-        this.loneshelf.setName("Reminders");
+        this.loneshelf.setName("Default Shelf");
         this.shelflist[0] = this.loneshelf;
     } else {
         this.stored.forEach((l) => {

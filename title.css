@@ -22,6 +22,9 @@ h3{
 input{
     margin-bottom: 5px;
 }
+dialog{
+    border: solid 1px black;
+}
 @media screen and (max-width: 600px){
     #shelflist{
         font-size: 20px;
@@ -46,6 +49,10 @@ input{
 
     }
     #doc, #docname {
+        font-size: 20px;
+    }
+
+    dialog input, dialog button{
         font-size: 20px;
     }
     

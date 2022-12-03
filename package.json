@@ -1,0 +1,25 @@
+{
+  "name": "totalchris.github.io",
+  "version": "1.0.0",
+  "description": "My Github Page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://TotalChris@github.com/TotalChris/totalchris.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TotalChris/totalchris.github.io/issues"
+  },
+  "homepage": "https://github.com/TotalChris/totalchris.github.io#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  },
+  "dependencies": {
+    "daisyui": "^2.42.1"
+  }
+}

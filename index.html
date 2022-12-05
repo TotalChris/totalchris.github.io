@@ -7,58 +7,57 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     </head>
     <body>
-      <div class="navbar bg-neutral drop-shadow-lg">
+      <div class="navbar bg-neutral drop-shadow-lg relative z-10">
         <div class="flex-1">
-          <a class="btn btn-ghost normal-case text-xl text-neutral-content">Chris Yates&nbsp;&nbsp;&nbsp;<div class="opacity-70">Web Developer</div></a>
+          <a class="btn btn-ghost normal-case text-xl text-neutral-content">Chris Yates&nbsp;&nbsp;&nbsp;<div class="opacity-70 max-sm:hidden">Web Developer</div></a>
+        </div>
+        <div class="flex-none text-neutral-content">
+          <ul class="menu menu-horizontal p-0">
+            <li><a href="index.html" class="font-bold hover:underline">Home</a></li>
+            <li tabindex="0" class="dropdown dropdown-hover">
+              <label class="hover:underline">
+                My Projects<i class="bi-arrow-down-circle-fill"></i>
+              </label>
+              <ul class="p-2 bg-neutral dropdown-content drop-shadow-2xl">
+                <li><a href="title.html" class="hover:underline">Title Notes</a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="flex flex-col lg:flex-row overflow-hidden">
-        <div class="hero min-h-fit py-10 bg-base-200 text-neutral w-full lg:w-1/2 lg:min-h-screen">
-          <div class="hero-content px-5 pb-0 flex-col">
-            <div class="flex">
-              <div class="max-w-md text-center">
-                <h1>
-                  <img src="./img/title192.png" alt="Title Notes logo" class="w-24 rounded-3xl mx-auto"/>
-                </h1>
-                <h1 class="mt-5 text-5xl font-bold text-center">Title Notes</h1>
-                <p class="my-5 text-center">The notes app designed to live in your browser.</p>
-                <a href="#colors"><button type="button" alt="" class="btn btn-ghost rounded-xl">Learn More&nbsp;<i class="bi bi-arrow-down-circle-fill"></i></button>
-                <button type="button" alt="Link to new Title Notes site" class="btn btn-primary rounded-xl" onclick="window.location = 'https://totalchris.com/title'">Check it out&nbsp;<i class="bi bi-arrow-up-right-circle-fill"></i></button></a>
-              </div>
+      <div class="hero bg-base-200 h-full">
+        <div class="hero-content max-w-full flex-col md:flex-row z-0">
+          <div class="carousel carousel-center w-full md:w-1/2 lg:w-3/5 h-96 space-x-4 bg-transparent rounded-box fade-carousel" style="padding-inline: 25%; -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);">
+            <div class="carousel-item h-96">
+              <img src="./img/Chris-7.jpg" class="mask mask-circle h-96" />
+            </div> 
+            <div class="carousel-item h-96">
+              <img src="./img/Chris-1.jpg" class="mask mask-circle h-96" />
+            </div> 
+            <div class="carousel-item h-96">
+              <img src="./img/Chris-5.jpg" class="mask mask-circle h-96" />
+            </div> 
+            <div class="carousel-item h-96">
+              <img src="./img/Chris-2.jpg" class="mask mask-circle h-96" />
             </div>
-          </div>
-        </div>
-        <div class="bg-base-200 w-full lg:w-1/2 flex">
-              <img src="./img/title.jpeg" class="self-center mx-auto drop-shadow-2xl w-2/3 h-2/3 lg:self-end lg:w-auto mg:mt-5" style="border-radius: 0.5rem 0.5rem 0 0; object-fit: cover; object-position: 0 0;"></img>
-          </div>
-      </div>
-      
-      <div class="p-10 bg-white" id="colors">
-        <div class="hero bg-base-200 rounded-3xl">
-          <div class="hero-content flex-col md:flex-row-reverse">
-            <img src="./img/title-feature-1.jpeg" class="max-w-sm rounded-lg shadow-2xl w-1/2 lg:w-full" />
-            <div class="mt-10 md:mr-10 max-w-md">
-              <h1 class="text-5xl font-bold">Colorful. Just like your ideas.</h1>
-              <p class="py-6">Title has a vivid selection of colors and icons for your lists. Color reaches into the UI of each list and note.</p>
-              <button type="button" alt="Link to new Title Notes site" class="btn btn-primary rounded-xl" onclick="window.location = 'https://totalchris.com/title'">Paint The town&nbsp;<i class="bi bi-arrow-up-right-circle-fill"></i></button>
+            <div class="carousel-item">
+              <img src="./img/Chris-3.jpg" class="mask mask-circle h-96" />
             </div>
+            <div class="carousel-item">
+              <img src="./img/Chris-4.jpg" class="mask mask-circle h-96" />
+            </div>
+            <div class="carousel-item">
+              <img src="./img/Chris-6.jpg" class="mask mask-circle h-96" />
+            </div> 
+          </div>          
+          <div class="w-full text-center md:w-1/2 lg:w-2/5 md:text-left">
+            <h1 class="text-5xl font-bold">Hi. I'm Chris.</h1>
+            <p class="py-5">I'm a 22-year-old independent web developer based in the United States. I have big dreams about what the web and its portability and capability offers us.</p>
+            <a href="https://github.com/sponsors/TotalChris"><button class="btn btn-secondary rounded-xl"><i class="bi-heart"></i>&nbsp;Sponsor Me</button></a>
           </div>
         </div>
       </div>
 
-      <div class="px-10 pb-10 bg-white" id="tasks">
-        <div class="hero bg-base-200 rounded-3xl">
-          <div class="hero-content flex-col md:flex-row">
-            <img src="./img/title-feature-2.jpeg" class="max-w-sm rounded-lg shadow-2xl w-1/2 lg:w-full" />
-            <div class="mt-10 md:ml-10 max-w-md">
-              <h1 class="text-5xl font-bold">Your shopping, from start to finish</h1>
-              <p class="py-6">Notes you write in Title can be checked off when you're done with a task, making Title the perfect notes/to-do list hybrid.</p>
-              <button type="button" alt="Link to new Title Notes site" class="btn btn-primary rounded-xl" onclick="window.location = 'https://totalchris.com/title'">Git 'er done&nbsp;<i class="bi bi-arrow-up-right-circle-fill"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-      
 
       <footer class="footer p-10 bg-neutral text-neutral-content">
         <div>

@@ -6,10 +6,6 @@
     scroll-behavior: smooth;
 }
 
-.divider:before, .divider:after {
-    background-color: white;
-}
-
 .social-icon:before {
     font-size: 24px;
 }
